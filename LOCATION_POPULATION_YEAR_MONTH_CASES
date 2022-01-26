@@ -1,0 +1,9 @@
+create TABLE "INTERVIEW_DB"."PLAYGROUND_BHARATH_KUMAR"."LOCATION_POPULATION_YEAR_MONTH_CASES"
+AS
+
+select population_density, location, Year(date(DATE)) as year, 
+month(date(DATE)) as month,
+sum(new_cases) as new_cases_total
+from "INTERVIEW_DB"."PLAYGROUND_BHARATH_KUMAR"."COVIDDATA"
+group by 1,2,3,4
+order by 1,2,3,4
